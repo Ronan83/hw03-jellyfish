@@ -8,12 +8,10 @@ https://github.com/user-attachments/assets/9cb47216-1556-4fed-a80d-4aa19b2f59b8
 
 ```mermaid
 flowchart LR
-    A["Line + 2× Bend<br/>(sin $F pulse)"] --> B[Revolve] --> C["Scallop + Pucker<br/>(VEX)"] --> D[Swim] --> ANIM(("Bell<br/>animated"))
-    ANIM -- "TimeShift f1" --> REST(("Bell<br/>rest"))
-    REST --> V["Veins"] & O["Organs"]
-    V & O -- "Point Deform<br/>rest → animated" --> OUT[[OUT]]
-    ANIM -- "rim points, pinned" --> T["Tentacles<br/>Vellum Hair"] --> OUT
-    ANIM -. "follows swim, pinned" .-> R["Oral arms<br/>Vellum Cloth"] --> OUT
+    BELL["<b>Bell surface</b><br/>Line · Bend×2 · Revolve<br/>Scallop/Pucker · Swim"] -- "TimeShift f1" --> REST(("rest"))
+    REST --> VO["Veins · Organs"] -- "Point Deform" --> OUT[["OUT"]]
+    BELL -. "deform target" .-> VO
+    BELL -- "pinned roots" --> SIM["Arms · Tentacles<br/>Vellum Cloth / Hair"] --> OUT
 ```
 
 Attached parts ride the bell with **Point Deform**; simulated parts are **pinned with Match Animation**, so a single change to the bell propagates everywhere.
